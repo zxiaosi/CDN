@@ -45,7 +45,7 @@ if __name__ == '__main__':
     runCmd(cmd2) 
     time.sleep(2)
 
-    print('执行 git commit -m "update blog" 命令！')
+    print('执行 git commit -m "update file" 命令！')
     runCmd(cmd3)
     time.sleep(2)
 
