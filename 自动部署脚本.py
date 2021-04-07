@@ -32,7 +32,7 @@ def countdown(t):
 if __name__ == '__main__':
     cmd1 = "git add ."
     cmd2 = 'git commit -m "update blog"'
-    cmd3 = "git push"
+    cmd3 = "git push -u origin master"
 
     time.sleep(1)
 
