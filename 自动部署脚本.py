@@ -30,19 +30,23 @@ def countdown(t):
 
 
 if __name__ == '__main__':
-    cmd1 = "git add ."
-    cmd2 = 'git commit -m "update blog"'
-    cmd3 = "git push -u origin master"
+    cmd1 = 'git pull'                       # 拉取代码
+    cmd2 = 'git add .'                      # 添加文件到git
+    cmd3 = 'git commit -m "update blog"'    # 提交备注
+    cmd4 = 'git push -u origin master'      # 推送代码
 
     time.sleep(1)
 
-    runCmd(cmd1)  # 清除public文件
+    runCmd(cmd1)        
     time.sleep(2)
 
-    runCmd(cmd2)
+    runCmd(cmd2) 
     time.sleep(2)
 
-    runCmd(cmd3)  # 上传文件
+    runCmd(cmd3)
+    time.sleep(2)
+
+    runCmd(cmd4)  
     time.sleep(2)
 
     print("上传成功！！！\n")      # 提示成功
