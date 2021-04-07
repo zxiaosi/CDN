@@ -37,15 +37,19 @@ if __name__ == '__main__':
 
     time.sleep(1)
 
+    print('执行 git pull 命令！')
     runCmd(cmd1)        
     time.sleep(2)
 
+    print('执行 git add . 命令！')
     runCmd(cmd2) 
     time.sleep(2)
 
+    print('执行 git commit -m "update blog" 命令！')
     runCmd(cmd3)
     time.sleep(2)
 
+    print('执行 git push -u origin master 命令！')
     runCmd(cmd4)  
     time.sleep(2)
 
