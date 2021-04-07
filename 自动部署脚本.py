@@ -45,5 +45,5 @@ if __name__ == '__main__':
     runCmd(cmd3)  # 上传文件
     time.sleep(2)
 
-    # print("上传成功！！！\n")      # 提示成功
-    # countdown(5)
+    print("上传成功！！！\n")      # 提示成功
+    countdown(5)
