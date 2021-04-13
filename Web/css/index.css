@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #FFFFFF;
+} 
+
+.bgimg{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-size: cover;
+    background-position: center 0;
+}
+
+ul{
+    z-index: 2;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+li{
+    margin: 20px 0px;
+    width: 300px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    font-size: 46px;
+    border-radius: 20px;
+    background-color: rgba(44, 62, 80, 0.8);
+}
+
+a:hover {color:#95a5a6;}	/* 鼠标指针移动到链接上 */
+a:active {color:#7f8c8d;}	/* 正在被点击的链接 */
+
+footer { 
+    z-index: 2;
+    position: absolute; 
+    bottom: 0; 
+    width: 100%; 
+    height: 60px; 
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center; 
+    background-color: rgba(44, 62, 80, 0.8);
+    clear:both; 
+} 
