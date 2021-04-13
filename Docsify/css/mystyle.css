@@ -139,7 +139,7 @@ aside.sidebar ul li.active > a:before {
 .markdown-section pre:before {
   content: '';
   display: block;
-  background: url(https://gitee.com/zxiaosi/image/raw/master/Common/point.png);
+  background: url(https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Docsify/images/point.png);
   height: 30px;
   width: 100%;
   background-size: 40px;
