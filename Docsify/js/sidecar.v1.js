@@ -519,4 +519,3 @@ var sidecar = function (t) {
         }, t
     }
 }]);
-//# sourceMappingURL=sidecar.js.map
