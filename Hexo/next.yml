@@ -1,0 +1,1091 @@
+# ---------------------------------------------------------------
+# Theme Core Configuration Settings
+# See: https://theme-next.org/docs/theme-settings/
+# ---------------------------------------------------------------
+
+# If false, merge configs from `_data/next.yml` into default configuration (rewrite).
+# If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
+# And if true, all config from default NexT `_config.yml` have to be copied into `next.yml`. Use if you know what you are doing.
+# Useful if you want to comment some options from NexT `_config.yml` by `next.yml` without editing default config.
+override: true             # 是否启用主题的配置文件
+
+# Console reminder if new version released.
+reminder: false
+
+# Allow to cache content generation. Introduced in NexT v6.0.0.
+cache:
+  enable: true
+
+# Remove unnecessary files after hexo generate.
+minify: false
+
+# Define custom file paths.
+# Create your custom files in site directory `source/_data` and uncomment needed files below.
+custom_file_path:         # 相关文件并启用
+  head: source/_data/head.swig
+  #header: source/_data/header.swig
+  sidebar: source/_data/sidebar.swig
+  #postMeta: source/_data/post-meta.swig
+  postBodyEnd: source/_data/post-body-end.swig
+  footer: source/_data/footer.swig
+  bodyEnd: source/_data/body-end.swig
+  variable: source/_data/variables.styl
+  #mixin: source/_data/mixins.styl
+  style: source/_data/styles.styl
+
+
+# ---------------------------------------------------------------
+# Site Information Settings
+# See: https://theme-next.org/docs/getting-started/
+# ---------------------------------------------------------------
+
+# 网站的图标
+favicon:                  
+  small: https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/favicon-16x16-next.webp
+  medium: https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/favicon-32x32-next.webp
+  apple_touch_icon: https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/apple-touch-icon-next.webp
+  safari_pinned_tab: https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/logo.svg
+  #android_manifest: /images/manifest.json
+  #ms_browserconfig: /images/browserconfig.xml
+
+# 国际化(i18n)--多语言设置
+# Show multilingual switcher in footer.
+language_switcher: false
+
+# 页脚信息
+footer:
+  # Specify the date when the site was setup. If not defined, current year will be used.
+  #since: 2015                # 建站时间
+
+  # Icon between year and copyright info.
+  icon:                       # 底部图标
+    # Icon name in Font Awesome. See: https://fontawesome.com/icons
+    name: fa fa-heart         # 图标名称
+    # If you want to animate the icon, set it to true.
+    animated: true            # 是否动画
+    # Change the color of icon, using Hex Code.
+    color: "#ff0000"          # 图标颜色
+
+  # If not defined, `author` from Hexo `_config.yml` will be used.
+  copyright:                  # 版权
+
+  # Powered by Hexo & NexT
+  powered: false              # 是否显示底部 Hexo & NexT.Gemini强力驱动
+
+  # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
+  beian:                      # 备案信息
+    enable: false
+    icp:
+    # The digit in the num of gongan beian.
+    gongan_id:
+    # The full num of gongan beian.
+    gongan_num:
+    # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
+    gongan_icon_url:
+
+# Creative Commons 4.0 International License.
+# See: https://creativecommons.org/share-your-work/licensing-types-examples
+# Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
+# You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
+# CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
+creative_commons:               # 版权
+  license: by-nc-sa
+  sidebar: false
+  post: true
+  language:
+
+
+# ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+# Schemes (外观)
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini
+
+# Dark Mode (夜间模式)
+darkmode: false
+
+
+# ---------------------------------------------------------------
+# Menu Settings
+# ---------------------------------------------------------------
+
+# Usage: `Key: /link/ || icon`
+# Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-senstive.
+# Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
+# When running the site in a subdirectory (e.g. yoursite.com/blog), remove the leading slash from link value (/archives -> archives).
+# External url should start with http:// or https://
+# 菜单设置为 菜单名: /菜单目录 || 菜单图标名字
+menu:   
+  home: / || fa fa-home                     # 首页
+  tags: /tags/ || fa fa-tags                # 标签
+  categories: /categories/ || fa fa-th      # 分类
+  archives: /archives/ || fa fa-archive     # 归档
+  #schedule: /schedule/ || fa fa-calendar   # 日程表
+  links: /links/ || fa fa-link              # 朋友圈
+  about: /about/ || fa fa-user              # 关于
+  #sitemap: /sitemap.xml || fa fa-sitemap   # 地图
+  #commonweal: /404/ || fa fa-heartbeat     # 404
+
+# 注：hexo 所有图标均来自 fontawesome，其中 || 后面是你想要设置的图标的名字。菜单项的中文文本翻译见菜单中文翻译
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true     # 显示图标
+  badges: true    # 显示统计信息
+
+
+# ---------------------------------------------------------------
+# Sidebar Settings
+# See: https://theme-next.org/docs/theme-settings/sidebar
+# ---------------------------------------------------------------
+
+# 侧边栏
+sidebar:
+  # Sidebar Position.
+  position: left                # 侧边栏位置        
+  #position: right              # 侧边栏位置:left/right
+
+  # Manual define the sidebar width. If commented, will be default for:
+  # Muse | Mist: 320
+  # Pisces | Gemini: 240
+  #width: 300
+
+  # Sidebar Display (only for Muse | Mist), available values:
+  #  - post    expand on posts automatically. Default.
+  #  - always  expand for all pages automatically.
+  #  - hide    expand only when click on the sidebar toggle icon.
+  #  - remove  totally remove sidebar including sidebar toggle.
+  display: post
+
+  # Sidebar padding in pixels.
+  padding: 18
+  # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+  offset: 12
+  # Enable sidebar on narrow view (only for Muse | Mist).
+  onmobile: false
+
+# Sidebar Avatar
+avatar:               # 侧边栏头像
+  # Replace the default image and set the url here.
+  url: https://cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/avatar.webp         # 图片地址
+  # If true, the avatar will be dispalyed in circle.
+  rounded: true       # 是否为圆型
+  # If true, the avatar will be rotated with the cursor.
+  rotated: false      # 是否旋转（鼠标放上去）
+
+# Posts / Categories / Tags in sidebar.
+site_state: true      # 日志|分类|标签 是否显示在侧边栏（头像下面）
+
+# Social Links
+# Usage: `Key: permalink || icon`
+# Key is the link label showing to end users.
+# Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
+# 社交
+social:
+  Web: https://zxiaosi.cn/ || fa fa-globe
+  Note: https://vue.zxiaosi.cn/ || fa fa-book
+  GitHub: https://github.com/zxiaosi || fab fa-github
+  #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
+  #Weibo: https://weibo.com/yourname || fab fa-weibo
+  Gitee: https://gitee.com/zxiaosi || fab fa-google
+  #Twitter: https://twitter.com/yourname || fab fa-twitter
+  #FB Page: https://www.facebook.com/yourname || fab fa-facebook
+  #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
+  #YouTube: https://youtube.com/yourname || fab fa-youtube
+  #Instagram: https://instagram.com/yourname || fab fa-instagram
+  #Skype: skype:yourname?call|chat || fab fa-skype
+  #Friendship: https://wq133.github.io || fa fa-gamepad
+
+# 社交图标
+social_icons:
+  enable: true
+  icons_only: false
+  transition: false
+
+# 友情链接
+# Blog rolls
+links_settings:         # 友情链接
+  icon: fa fa-link      # 友情链接图标
+  title: Links          # 友情链接名字
+  # Available values: block按块（一行一个） | inline按线摆放（一行很多个）
+  layout: block         # 友情链接方式
+
+links:                  # 友情链接地址
+  #Title: http://yoursite.com
+
+# Table of Contents in the Sidebar
+# Front-matter variable (unsupport wrap expand_all).
+toc:                     # 目录
+  enable: true           # 是否开启目录
+  # Automatically add list number to toc.
+  number: false           # 是否开启数字目录
+  # If true, all words will placed on next lines if header width longer then sidebar width.
+  wrap: false             # 是否隐藏
+  # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+  expand_all: false       # 是否展开所有
+  # Maximum heading depth of generated toc.
+  max_depth: 6
+
+# A button to open designated chat widget in sidebar.
+# Firstly, you need enable the chat service you want to activate its sidebar button.
+chat:
+  enable: false
+  #service: chatra
+  #service: tidio
+  icon: fa fa-comment # Icon name in Font Awesome, set false to disable icon.
+  text: Chat # Button text, change it as you wish.
+
+
+# ---------------------------------------------------------------
+# Post Settings
+# See: https://theme-next.org/docs/theme-settings/posts
+# ---------------------------------------------------------------
+
+# Automatically excerpt description in homepage as preamble text.
+excerpt_description: true  # 是否截断文章
+
+# Read more button
+# If true, the read more button will be displayed in excerpt section.
+read_more_btn: true       # 阅读全文按钮
+
+# Post meta display settings
+post_meta:                # 文章
+  item_text: true         # 文章标题
+  created_at: true        # 创建文章的时间
+  updated_at:             # 更新文章的时间
+    enable: true
+    another_day: true
+  categories: true        # 是否显示分类
+
+# 字数统计、阅读时长
+# Post wordcount display settings
+# Dependencies: https://github.com/theme-next/hexo-symbols-count-time
+# 安装插件: npm install hexo-symbols-count-time --save
+symbols_count_time:           
+  separated_meta: true        # false会显示一行
+  item_text_post: true        # 显示属性名称,设为false后只显示图标和统计数字,不显示属性的文字
+  item_text_total: false      # 底部footer是否显示字数统计属性文字
+
+# Use icon instead of the symbol # to indicate the tag at the bottom of the post
+# 标签图标
+tag_icon: true                
+
+# Reward (Donate)
+# Front-matter variable (unsupport animation).
+# 打赏设置
+reward_settings:              
+  # If true, reward will be displayed in every article by default.
+  enable: false               # 是否开启
+  animation: false             # 是否动画
+  #comment: Donate comment here.
+
+# 打赏
+reward:                       
+  wechatpay:  # 微信
+  alipay:     # 支付宝
+  #paypal: /images/paypal.png 
+  #bitcoin: /images/bitcoin.png       # 比特币
+
+# Subscribe through Telegram Channel, Twitter, etc.
+# Usage: `Key: permalink || icon` (Font Awesome)
+# 订阅
+follow_me:
+  #Twitter: https://twitter.com/username || fab fa-twitter
+  #Telegram: https://t.me/channel_name || fab fa-telegram
+  #WeChat: /images/wechat_channel.jpg || fab fa-weixin
+  #RSS: /atom.xml || fa fa-rss
+
+# Related popular posts
+# Dependencies: https://github.com/tea3/hexo-related-popular-posts
+# 安装插件：npm install hexo-related-popular-posts --save
+# 相关文章推荐
+related_posts:
+  enable: false           # 是否启动
+  title: 相关文章推荐  # 属性的命名
+  display_in_home: false  # false代表首页不显示
+  params:
+    maxCount: 5           # 最多5条
+    #PPMixingRate: 0.0    # 相关度
+    #isDate: false        # 是否显示日期
+    #isImage: false       # 是否显示配图
+    #isExcerpt: false     # 是否显示摘要
+
+# Post edit
+# Dependencies: https://github.com/hexojs/hexo-deployer-git
+post_edit:
+  enable: false
+  url: # https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name # Link for view source
+  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name # Link for fork & edit
+
+# Show previous post and next post in post footer if exists
+# Available values: left | right | false
+post_navigation: left
+
+
+# ---------------------------------------------------------------
+# Custom Page Settings
+# See: https://theme-next.org/docs/theme-settings/custom-pages
+# ---------------------------------------------------------------
+
+# TagCloud settings for tags page.
+# 标签云
+tagcloud:
+  # All values below are same as default, change them by yourself.
+  min: 12 # Minimun font size in px
+  max: 30 # Maxium font size in px
+  start: "#ccc" # Start color (hex, rgba, hsla or color keywords)
+  end: "#111" # End color (hex, rgba, hsla or color keywords)
+  amount: 200 # Amount of tags, change it if you have more than 200 tags
+
+# Google Calendar
+# Share your recent schedule to others via calendar page.
+# 谷歌日历
+calendar:
+  calendar_id: <required> # Your Google account E-Mail
+  api_key: <required>
+  orderBy: startTime
+  offsetMax: 24 # Time Range
+  offsetMin: 4 # Time Range
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250
+
+
+# ---------------------------------------------------------------
+# Misc Theme Settings
+# ---------------------------------------------------------------
+
+# Set the text alignment in posts / pages.
+# 文本居中方式
+text_align:
+  # Available values: start | end | left | right | center | justify | justify-all | match-parent
+  desktop: justify        # 电脑
+  mobile: justify         # 手机
+
+# Reduce padding / margin indents on devices with narrow width.
+mobile_layout_economy: false
+
+# Android Chrome header panel color ($brand-bg / $headband-bg => $black-deep).
+android_chrome_color: "#222"
+
+# 自定义logo
+# Custom Logo (Do not support scheme Mist)
+custom_logo: # //cdn.jsdelivr.net/gh/zxiaosi/cdn/Hexo/icon/Logo.png
+
+# 代码块
+codeblock:
+  # Code Highlight theme
+  # Available values: normal | night | night eighties | night blue | night bright | solarized | solarized dark | galactic
+  # See: https://github.com/chriskempson/tomorrow-theme
+  highlight_theme: night bright      # 从上面选一个自己喜欢的主题
+  # Add copy button on codeblock
+  copy_button:                       # 复制按钮
+    enable: true                     # 是否开启
+    # Show text copy result.
+    show_result: true                # 点击复制完后是否显示 复制成功 
+    # Available values: default | flat | mac
+    style: mac                       # 代码块风格
+
+back2top:                           # 显示当前浏览进度
+  enable: true                      # 是否开启
+  # Back to top in sidebar.
+  sidebar: false                    # 显示在侧边栏
+  # Scroll percent label in b2t button.
+  scrollpercent: true               # 滚动百分比
+
+# Reading progress bar        
+reading_progress:                   # 阅读进度条
+  enable: true                      # 是否开启
+  # Available values: top | bottom
+  position: top                     # 显示在顶部或者底部
+  color: "#37c6c0"                  # 进度条颜色
+  height: 3px                       # 进度条宽度
+
+# 书签
+# Bookmark Support
+bookmark:                           
+  enable: false                     # 是否开启
+  # Customize the color of the bookmark.
+  color: "#222"                     # 书签颜色
+  # If auto, save the reading progress when closing the page or clicking the bookmark-icon. 如果 auto, 在关闭页面或单击书签图标时保存阅读进度。
+  # If manual, only save it by clicking the bookmark-icon. 如果 manual, 仅通过点击书签图标保存它。
+  save: auto                         # 书签保存方式 auto|manual
+
+# github横幅
+# `Follow me on GitHub` banner in the top-right corner.
+github_banner:                              
+  enable: true                                   # 是否开启
+  permalink: https://github.com/zxiaosi/hexo     # GitHub地址
+  title: Follow me on GitHub                     # 鼠标放上去显示的标题
+
+
+# ---------------------------------------------------------------
+# Font Settings
+# See: https://theme-next.org/docs/theme-settings/#Fonts-Customization
+# ---------------------------------------------------------------
+# Find fonts on Google Fonts (https://www.google.com/fonts)
+# All fonts set here will have the following styles:
+#   light | light italic | normal | normal italic | bold | bold italic
+# Be aware that setting too much fonts will cause site running slowly
+# ---------------------------------------------------------------
+# To avoid space between header and sidebar in scheme Pisces / Gemini, Web Safe fonts are recommended for `global` (and `title`):
+# Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
+# ---------------------------------------------------------------
+
+# 字体
+font:
+  enable: true
+
+  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
+  host: https://fonts.loli.net
+  # 备用 
+  # https://fonts.loli.net
+  # 国内科大的库 https://fonts.lug.ustc.edu.cn/
+  # 捷速网络 https://fonts.css.network/
+
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # Roboto Mono、Noto Serif SC、Lato
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
+  global:
+    external: false
+    family: 
+    size:
+
+  # Font settings for site title (.site-title).
+  title:
+    external: true
+    family: Ma Shan Zheng
+    size:
+
+  # Font settings for headlines (<h1> to <h6>).
+  headings:
+    external: false
+    family: 
+    size:
+
+  # Font settings for posts (.post-body).
+  posts:
+    external: true
+    family: Noto Serif SC
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: true
+    family: Roboto Mono
+
+
+# ---------------------------------------------------------------
+# SEO Settings
+# ---------------------------------------------------------------
+
+# 收录
+# Disable Baidu transformation on mobile devices.
+disable_baidu_transformation: false
+
+# If true, site-subtitle will be added to index page.
+# Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
+index_with_subtitle: false
+
+# Automatically add external URL with Base64 encrypt & decrypt.
+exturl: false
+
+# Google Webmaster tools verification.
+# See: https://www.google.com/webmasters
+google_site_verification:
+
+# Bing Webmaster tools verification.
+# See: https://www.bing.com/webmaster
+bing_site_verification:
+
+# Yandex Webmaster tools verification.
+# See: https://webmaster.yandex.ru
+yandex_site_verification: 
+
+# Baidu Webmaster tools verification.
+# See: https://ziyuan.baidu.com/site
+baidu_site_verification: true
+
+# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO.
+baidu_push: true
+
+
+# ---------------------------------------------------------------
+# Third Party Plugins & Services Settings
+# See: https://theme-next.org/docs/third-party-services/
+# More plugins: https://github.com/theme-next/awesome-next
+# You may need to install dependencies or set CDN URLs in `vendors`
+# There are two different CDN providers by default:
+#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China
+#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare
+# ---------------------------------------------------------------
+
+# 数学公式渲染
+# Math Formulas Render Support
+math:
+  # Default (true) will load mathjax / katex script on demand.
+  # That is it only render those page which has `mathjax: true` in Front-matter.
+  # If you set it to false, it will load mathjax / katex srcipt EVERY PAGE.
+  per_page: true
+
+  # hexo-renderer-pandoc (or hexo-renderer-kramed) required for full MathJax support.
+  mathjax:
+    enable: false
+    # See: https://mhchem.github.io/MathJax-mhchem/
+    mhchem: false
+
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
+  katex:
+    enable: false
+    # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
+    copy_tex: false
+
+# pjax
+# Easily enable fast Ajax navigation on your website.
+# Dependencies: https://github.com/theme-next/theme-next-pjax
+pjax: false
+
+# 图片放大功能
+# FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
+# For more information: https://fancyapps.com/fancybox
+fancybox: true
+
+# 图片放大功能
+# A JavaScript library for zooming images like Medium.
+# Do not enable both `fancybox` and `mediumzoom`.
+# For more information: https://github.com/francoischalifour/medium-zoom
+mediumzoom: false
+
+# 图片懒加载
+# Vanilla JavaScript plugin for lazyloading images.
+# For more information: https://github.com/ApoorvSaxena/lozad.js
+lazyload: true
+
+# 盘古(汉字与英文之间加空格符)
+# Pangu Support
+# For more information: https://github.com/vinta/pangu.js
+pangu: true
+
+# 快链接支持(不支持和pjax同时开启)
+# Quicklink Support
+# Do not enable both `pjax` and `quicklink`.
+# For more information: https://github.com/GoogleChromeLabs/quicklink
+# Front-matter (unsupport home archive).
+quicklink:
+  enable: false
+
+  # Home page and archive page can be controlled through home and archive options below.
+  # This configuration item is independent of `enable`.
+  home: false
+  archive: false
+
+  # Default (true) will initialize quicklink after the load event fires.
+  delay: true
+  # Custom a time in milliseconds by which the browser must execute prefetching.
+  timeout: 3000
+  # Default (true) will enable fetch() or falls back to XHR.
+  priority: true
+
+  # For more flexibility you can add some patterns (RegExp, Function, or Array) to ignores.
+  # See: https://github.com/GoogleChromeLabs/quicklink#custom-ignore-patterns
+  ignores:
+
+
+# ---------------------------------------------------------------
+# Comments Settings
+# See: https://theme-next.org/docs/third-party-services/comments
+# ---------------------------------------------------------------
+
+# 多种评论支持
+# Multiple Comment System Support
+comments:
+  # Available values: tabs | buttons
+  style: tabs
+  # Choose a comment system to be displayed by default.
+  # Available values: changyan | disqus | disqusjs | gitalk | livere | valine
+  active:
+  # Setting `true` means remembering the comment system selected by the visitor.
+  storage: true
+  # Lazyload all comment systems.
+  lazyload: false
+  # Modify texts or order for any navs, here are some examples.
+  nav:
+    #disqus:
+    #  text: Load Disqus
+    #  order: -1
+    #gitalk:
+    #  order: -2
+
+# Disqus
+disqus:
+  enable: false
+  shortname:
+  count: true
+  #post_meta_order: 0
+
+# DisqusJS
+# Alternative Disqus - Render comment component using Disqus API.
+# Demo: https://suka.js.org/DisqusJS/
+# For more information: https://github.com/SukkaW/DisqusJS
+disqusjs:
+  enable: false
+  # API Endpoint of Disqus API (https://disqus.com/api/).
+  # Leave api empty if you are able to connect to Disqus API. Otherwise you need a reverse proxy for it.
+  # For example:
+  # api: https://disqus.skk.moe/disqus/
+  api:
+  apikey: # Register new application from https://disqus.com/api/applications/
+  shortname: # See: https://disqus.com/admin/settings/general/
+
+# Changyan
+changyan:
+  enable: false
+  appid:
+  appkey:
+  #post_meta_order: 0
+
+# Valine
+# For more information: https://valine.js.org, https://github.com/xCss/Valine
+valine:
+  enable: true
+  appid: oypc9yjQm7qBQAQlfQLhCuWl-MdYXbMMI # 填入leancloud获取的APP ID
+  appkey: rMAPcTURsdsEaKcslKYEl9uj  # 填入leancloud获取的APP key
+  notify: true                     # 邮件通知默认关闭 
+  verify: false                     # 验证码默认关闭
+  placeholder: 在这里写下你的评论吧！ # 评论框默认文字
+  avatar: wavatar                   # 头像风格
+  guest_info: nick,mail             #,link # 自定义头部链接
+  pageSize: 10                      # 分页大小
+  language:                         # 语言, 值: en, zh-cn
+  visitor: false                    # 文章阅读统计
+  comment_count: true               # 如果为false，评论计数将只显示在文章页面，而不是首页
+  recordIP: false                   # 是否记录IP
+  enableQQ: true
+  serverURLs:                       # 当自定义域名启用时，在这里填写(默认自动检测，不需要填写)
+  #post_meta_order: 0
+
+# LiveRe comments system
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+livere_uid: # <your_uid>
+
+# Gitalk
+# For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
+gitalk:
+  enable: false
+  github_id: # GitHub repo owner
+  repo: # Repository name to store issues
+  client_id: # GitHub Application Client ID
+  client_secret: # GitHub Application Client Secret
+  admin_user: # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  distraction_free_mode: true # Facebook-like distraction free mode
+  # Gitalk's display language depends on user's browser or system environment
+  # If you want everyone visiting your site to see a uniform language, you can set a force language value
+  # Available values: en | es-ES | fr | ru | zh-CN | zh-TW
+  language:
+
+
+# ---------------------------------------------------------------
+# Post Widgets & Content Sharing Services
+# See: https://theme-next.org/docs/third-party-services/post-widgets
+# ---------------------------------------------------------------
+
+# 评级和评论
+# Star rating support to each article.
+# To get your ID visit https://widgetpack.com
+rating:
+  enable: false
+  id: 30140
+  color: fc6423
+
+# AddThis Share. See: https://www.addthis.com
+# Go to https://www.addthis.com/dashboard to customize your tools.
+add_this_id:
+
+
+# ---------------------------------------------------------------
+# Statistics and Analytics
+# See: https://theme-next.org/docs/third-party-services/statistics-and-analytics
+# ---------------------------------------------------------------
+
+# Google Analytics
+google_analytics:
+  tracking_id: G-LFV6F84KP1
+  # By default, NexT will load an external gtag.js script on your site.
+  # If you only need the pageview feature, set the following option to true to get a better performance.
+  only_pageview: false
+
+# Baidu Analytics
+baidu_analytics: 3b52bb735da47841fbe9c62e3ffab9d1
+
+# Growingio Analytics
+growingio_analytics: # <project_id>
+
+# CNZZ count
+cnzz_siteid:
+
+# Show number of visitors of each article.
+# You can visit https://leancloud.cn to get AppID and AppKey.
+# AppID and AppKey are recommended to be the same as valine's for counter compatibility.
+# Do not enable both `valine.visitor` and `leancloud_visitors`.
+leancloud_visitors:
+  enable: false
+  app_id: # <your app id>
+  app_key: # <your app key>
+  # Required for apps from CN region
+  server_url: # <your server url>
+  # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
+  # If you don't care about security in leancloud counter and just want to use it directly
+  # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
+  security: true
+
+# Another tool to show number of visitors to each article.
+# Visit https://console.firebase.google.com/u/0/ to get apiKey and projectId.
+# Visit https://firebase.google.com/docs/firestore/ to get more information about firestore.
+firestore:
+  enable: false
+  collection: articles # Required, a string collection name to access firestore database
+  apiKey: # Required
+  projectId: # Required
+
+# 页面统计 卜蒜子统计
+# Show Views / Visitors of the website / page with busuanzi.
+# Get more information on http://ibruce.info/2015/04/04/busuanzi
+busuanzi_count:                     # 页面阅读统计 不蒜子统计
+  enable: true                      # 是否开启
+  total_visitors: true              # 总阅读人数（uv数）
+  total_visitors_icon: fa fa-user   # 阅读总人数的图标
+  total_views: true                 # 总阅读次数（pv数）
+  total_views_icon: fa fa-eye       # 阅读总次数的图标
+  post_views: true                  # 开启内容阅读次数
+  post_views_icon: fa fa-eye        # 内容页阅读数的图标
+
+
+# ---------------------------------------------------------------
+# Search Services
+# See: https://theme-next.org/docs/third-party-services/search-services
+# ---------------------------------------------------------------
+
+# 搜索
+# Algolia Search
+# For more information: https://www.algolia.com
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We didn't find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+
+# 本地搜索
+# Local Search
+# Dependencies: https://github.com/theme-next/hexo-generator-searchdb
+local_search:
+  enable: true
+  # If auto, trigger search by changing input.
+  # If manual, trigger search by pressing enter key or search button.
+  trigger: auto
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  # Preload the search data when the page loads.
+  preload: false
+
+# Swiftype Search API Key
+swiftype_key:
+
+
+# ---------------------------------------------------------------
+# Chat Services
+# See: https://theme-next.org/docs/third-party-services/chat-services
+# ---------------------------------------------------------------
+
+# Chatra Support
+# See: https://chatra.io
+# Dashboard: https://app.chatra.io/settings/general
+chatra:
+  enable: false
+  async: true
+  id: # Visit Dashboard to get your ChatraID
+  #embed: # Unfinished experimental feature for developers. See: https://chatra.io/help/api/#injectto
+
+# Tidio Support
+# See: https://www.tidiochat.com
+# Dashboard: https://www.tidiochat.com/panel/dashboard
+tidio:
+  enable: false
+  key: # Public Key, get it from dashboard. See: https://www.tidiochat.com/panel/settings/developer
+
+
+# ---------------------------------------------------------------
+# Tags Settings
+# See: https://theme-next.org/docs/tag-plugins/
+# ---------------------------------------------------------------
+
+# Note tag (bs-callout)
+note:
+  # Note tag style values:
+  #  - simple    bs-callout old alert style. Default.
+  #  - modern    bs-callout new (v2-v3) alert style.
+  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+  #  - disabled  disable all CSS styles import of note tag.
+  style: flat
+  icons: true
+  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+  # Offset also applied to label tag variables. This option can work with disabled note tag.
+  light_bg_offset: -18
+
+# Tabs tag
+tabs:
+  transition:
+    tabs: false
+    labels: true
+
+# PDF tag
+# NexT will try to load pdf files natively, if failed, pdf.js will be used.
+# So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+# See: https://github.com/theme-next/theme-next-pdf
+pdf:
+  enable: false
+  # Default height
+  height: 500px
+
+# Mermaid tag
+mermaid:
+  enable: false
+  # Available themes: default | dark | forest | neutral
+  theme: forest
+
+
+# ---------------------------------------------------------------
+# Animation Settings
+# ---------------------------------------------------------------
+
+# 板块出现动画
+# Use velocity to animate everything.
+# For more information: http://velocityjs.org
+motion:           
+  enable: true    # 是否开启
+  async: false    # 是否异步
+  transition:     # 动画
+    # Transition variants:
+    # fadeIn | flipXIn | flipYIn | flipBounceXIn | flipBounceYIn
+    # swoopIn | whirlIn | shrinkIn | expandIn
+    # bounceIn | bounceUpIn | bounceDownIn | bounceLeftIn | bounceRightIn
+    # slideUpIn | slideDownIn | slideLeftIn | slideRightIn
+    # slideUpBigIn | slideDownBigIn | slideLeftBigIn | slideRightBigIn
+    # perspectiveUpIn | perspectiveDownIn | perspectiveLeftIn | perspectiveRightIn
+    post_block: fadeIn          # 文章
+    post_header: slideDownIn    # 文章头
+    post_body: slideDownIn      # 文章身体
+    coll_header: slideLeftIn    # 未知
+    # Only for Pisces | Gemini.
+    sidebar: slideUpIn          #仅适用于（Pisces | Gemini）
+
+# 加载动画
+# Progress bar in the top during page loading.
+# Dependencies: https://github.com/theme-next/theme-next-pace
+# For more information: https://github.com/HubSpot/pace
+# 安装插件：git clone https://github.com/theme-next/theme-next-pace source/lib/pace
+pace:              # 显示当前网页的加载进度
+  enable: true    # 是否开启
+  # Themes list:
+  # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
+  # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
+  theme: 
+
+# JavaScript 3D library.
+# Dependencies: https://github.com/theme-next/theme-next-three
+three:
+  enable: false
+  three_waves: false
+  canvas_lines: false
+  canvas_sphere: false
+
+# Canvas-ribbon
+# Dependencies: https://github.com/theme-next/theme-next-canvas-ribbon
+# For more information: https://github.com/zproo/canvas-ribbon
+canvas_ribbon:
+  enable: false
+  size: 300 # The width of the ribbon
+  alpha: 0.6 # The transparency of the ribbon
+  zIndex: -1 # The display level of the ribbon
+
+
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! See: https://theme-next.org/docs/advanced-settings
+#! ---------------------------------------------------------------
+
+# Script Vendors. Set a CDN address for the vendor you want to customize.
+# Be aware that you would better use the same version as internal ones to avoid potential problems.
+# Remember to use the https protocol of CDN files when you enable https on your site.
+# CDN版本
+vendors:
+  # Internal path prefix.
+  _internal: lib
+
+  # Internal version: 3.1.0
+  # anime: //cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js
+  anime: https://cdn.bootcdn.net/ajax/libs/animejs/3.1.0/anime.min.js
+
+  # Internal version: 5.13.0
+  # fontawesome: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css
+  # fontawesome: //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css
+  fontawesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.3/css/all.css
+
+  # MathJax
+  # mathjax: //cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  mathjax:
+
+  # KaTeX
+  # katex: //cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
+  # katex: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css
+  # copy_tex_js: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js
+  # copy_tex_css: //cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css
+  katex:
+  copy_tex_js:
+  copy_tex_css:
+
+  # Internal version: 0.2.8
+  # pjax: //cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js
+  pjax:
+
+  # FancyBox
+  # jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+  # fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  # fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+  jquery: 
+  fancybox: 
+  fancybox_css: 
+
+  # Medium-zoom
+  # mediumzoom: //cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js
+  mediumzoom:
+
+  # Lazyload
+  # lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js
+  # lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js
+  # //cdn.bootcdn.net/ajax/libs/lozad.js/1.16.0/lozad.min.js
+  lazyload: 
+
+  # Pangu
+  # pangu: //cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js
+  # pangu: //cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js
+  # //cdn.bootcdn.net/ajax/libs/pangu/4.0.7/pangu.min.js
+  pangu: 
+
+  # Quicklink
+  # quicklink: //cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js
+  quicklink:
+
+  # DisqusJS
+  # disqusjs_js: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqus.js
+  # disqusjs_css: //cdn.jsdelivr.net/npm/disqusjs@1/dist/disqusjs.css
+  disqusjs_js:
+  disqusjs_css:
+
+  # Valine
+  # valine: //cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+  # valine: //cdnjs.cloudflare.com/ajax/libs/valine/1.3.10/Valine.min.js
+  valine: https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/Valine.min.js
+
+  # Gitalk
+  # gitalk_js: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
+  # gitalk_css: //cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css
+  gitalk_js:
+  gitalk_css:
+
+  # Algolia Search
+  # algolia_search: //cdn.jsdelivr.net/npm/algoliasearch@4/dist/algoliasearch-lite.umd.js
+  # instant_search: //cdn.jsdelivr.net/npm/instantsearch.js@4/dist/instantsearch.production.min.js
+  algolia_search:
+  instant_search:
+
+  # Mermaid
+  # mermaid: //cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js
+  # mermaid: //cdnjs.cloudflare.com/ajax/libs/mermaid/8.4.8/mermaid.min.js
+  mermaid:
+
+  # Internal version: 1.2.1
+  # velocity: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js
+  # velocity: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.min.js
+  # velocity_ui: //cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js
+  # velocity_ui: //cdnjs.cloudflare.com/ajax/libs/velocity/1.2.1/velocity.ui.min.js
+  velocity: https://cdn.bootcss.com/velocity/1.5.2/velocity.min.js
+  velocity_ui: https://cdn.bootcss.com/velocity/1.5.2/velocity.ui.min.js
+
+  # Internal version: 1.0.2
+  # pace: //cdn.jsdelivr.net/npm/pace-js@1/pace.min.js
+  # pace: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js
+  # pace_css: //cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css
+  # pace_css: //cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css
+  pace: https://cdn.bootcss.com/pace/1.2.4/pace.min.js
+  pace_css: https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.min.css
+  
+
+  # Internal version: 1.0.0
+  # three: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three.min.js
+  # three_waves: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/three-waves.min.js
+  # canvas_lines: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_lines.min.js
+  # canvas_sphere: //cdn.jsdelivr.net/gh/theme-next/theme-next-three@1/canvas_sphere.min.js
+  three:
+  three_waves:
+  canvas_lines:
+  canvas_sphere:
+
+  # Internal version: 1.0.0
+  # canvas_ribbon: //cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js
+  canvas_ribbon: 
+
+# Assets
+css: css
+js: js
+images: images
+
+# 鼠标点击特效
+# mouse click effect: fireworks | explosion | love | text
+cursor_effect: text
+
+# 打字特效
+# typing effect
+typing_effect:
+  colorful: true  # 礼花特效
+  shake: false    # 震动特效
+
+recent_posts_title: 近 期 文 章
+recent_posts_layout: block
+recent_posts: true
+
+# 文章内链接文本样式
+custom_css:
+  # the style of post body link
+  post_body_a:  
+    enable: true                  # 是否启用
+    normal_color: "#0593d3"       # 正常颜色
+    hover_color: "#ff106c"        # 鼠标放上去的颜色                    
+
+# Darkmode JS
+# For more information: https://github.com/rqh656418510/hexo-next-darkmode, https://github.com/sandoche/Darkmode.js
+darkmode_js:
+  enable: true
+  bottom: '64px' # default: '32px'
+  right: '32px' # default: '32px'
+  left: 'unset' # default: 'unset'
+  time: '0.5s' # default: '0.3s'
+  mixColor: 'transparent' # default: '#fff'
+  backgroundColor: 'transparent'  # default: '#fff'
+  buttonColorDark: '#100f2c'  # default: '#100f2c'
+  buttonColorLight: '#fff' # default: '#fff'
+  saveInCookies: true # default: true
+  label: '🌓' # default: ''
+  autoMatchOsTheme: true # default: true
+  libUrl: https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js
